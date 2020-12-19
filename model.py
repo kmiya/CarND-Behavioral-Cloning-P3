@@ -20,7 +20,8 @@ def get_csv_data(csv_path):
 
 
 def add_training_data(name, angle, images, angles):
-    image = cv2.imread(name)
+    # cv2 reads images as BGR
+    image = cv2.cvtColor(cv2.imread(name), cv2.COLOR_BGR2RGB)
     images.append(image)
     angles.append(angle)
     images.append(np.fliplr(image))
@@ -50,6 +51,7 @@ def generator(samples, batch_size=32):
 
 def yuv_conversion(x):
     import tensorflow as tf
+    # Simulator and the generator send images as RGB
     return tf.image.rgb_to_yuv(x)
 
 
