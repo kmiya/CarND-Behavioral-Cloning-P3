@@ -91,8 +91,7 @@ def define_model(input_shape):
 def main():
     samples_c1_2 = get_csv_data('./course1_2/driving_log.csv')
     samples_c1_3 = get_csv_data('./course1_3/driving_log.csv')
-    samples_c1_4 = get_csv_data('./course1_3/driving_log.csv')
-    samples = samples_c1_2 + samples_c1_3 + samples_c1_4
+    samples = samples_c1_2 + samples_c1_3
     train_samples, validation_samples = train_test_split(
         samples, test_size=0.2)
     epochs = 5
