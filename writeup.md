@@ -27,8 +27,6 @@ Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/4
 
 ### Required Files
 
-> Are all required files submitted?
-
 My project includes the following files:
 
 * `model.py` containing the script to create and train the model
@@ -55,7 +53,7 @@ The above models are trained using a dataset captured using a keyboard. On the o
 Using the Udacity provided simulator and my `drive.py` file, the car can be driven autonomously around the track by executing
 
 ```sh
-python drive.py model_bn.h5
+python drive.py model_kb.h5
 ```
 
 Please be aware of the software dependencies and their versions described in `README.md`.
@@ -88,7 +86,7 @@ The number of epoch is 1 for early stopping, the batch size is 32 (lines 101-102
 
 #### 4. Is the training data chosen appropriately?
 
-Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road. The training data includes 5,880 x 3 = 17,640 images and its flipped images as augmented data.
+Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road. The training data includes 5,880 x 3 = 17,640 camera images and its flipped images as augmented data.
 
 For details about how I created the training data, see the next section.
 
@@ -100,7 +98,7 @@ First, I attempted to use the NVIDIA's model with normalized RGB images. But it 
 
 Next, I added Batch Normalization layers to the model. After training the model again, the car could drive around the track, but seemed to unstable to drive.
 
-Finally, I added a lambda layer to the model to convert the color space of input images from RGB to YUV. It enabled the model to drive the car around the track stably. See `video_bn.mp4`.
+Finally, I added a lambda layer to the model to convert the color space of input images from RGB to YUV. It enabled the model to drive the car around the track stably. See `video_kb.mp4`.
 
 #### 2. Final Model Architecture
 
