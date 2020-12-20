@@ -42,8 +42,8 @@ def generator(samples, batch_size=32):
                 right = batch_sample[2].split('/')[-1]
                 angle = float(batch_sample[3])
                 add_training_data(center, angle, images, angles)
-                add_training_data(left, angle + 0.45, images, angles)
-                add_training_data(right, angle - 0.45, images, angles)
+                add_training_data(left, angle + 0.2, images, angles)
+                add_training_data(right, angle - 0.2, images, angles)
             X_train = np.array(images)
             y_train = np.array(angles)
             yield shuffle(X_train, y_train)
