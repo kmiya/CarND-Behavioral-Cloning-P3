@@ -96,7 +96,7 @@ def main():
     samples = samples_c1_kb + samples_c1_mouse
     train_samples, validation_samples = train_test_split(
         samples, test_size=0.2)
-    epochs = 5
+    epochs = 1
     batch_size = 32
     train_generator = generator(train_samples, batch_size=batch_size)
     validation_generator = generator(validation_samples, batch_size=batch_size)
